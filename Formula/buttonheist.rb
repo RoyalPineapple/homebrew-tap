@@ -1,14 +1,14 @@
 class Buttonheist < Formula
   desc "Give AI agents full programmatic control of iOS apps"
   homepage "https://github.com/RoyalPineapple/TheButtonHeist"
-  version "2026.04.02"
+  version "2026.04.03"
 
-  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.02/buttonheist-2026.04.02-macos.tar.gz"
-  sha256 "ed53651c9215088e2b0f23d6c03a00a6f18503860715cb53517bce389cc0efb5"
+  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.03/buttonheist-2026.04.03-macos.tar.gz"
+  sha256 "3f0ae72ed6f29faf892dbc66a3aa0769d102f11c072fa0a966027ddaf4a9a773"
 
   resource "mcp" do
-    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.02/buttonheist-mcp-2026.04.02-macos.tar.gz"
-    sha256 "7d6dc11c8445ae227f0f85d23c96fd69161227be32e2cd97d09f87ce7f4d8fcb"
+    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.03/buttonheist-mcp-2026.04.03-macos.tar.gz"
+    sha256 "e7f87fcfd7404bd26c02f9f80d55c0904b9959683734c5207b188afdf5a27dd4"
   end
 
   depends_on :macos
@@ -26,12 +26,12 @@ class Buttonheist < Formula
 
       Add to your project's .mcp.json:
         {
-          "mcpServers": {
-            "buttonheist": {
-              "command": "#{opt_bin}/buttonheist-mcp",
-              "args": []
-            }
-          }
+"mcpServers": {
+  "buttonheist": {
+    "command": "#{opt_bin}/buttonheist-mcp",
+    "args": []
+  }
+}
         }
     EOS
   end
