@@ -4,11 +4,11 @@ class Buttonheist < Formula
   version "2026.04.06"
 
   url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06/buttonheist-2026.04.06-macos.tar.gz"
-  sha256 "6d7d614bda8c7c4c32e9c4100534ce6c2a59acc18d30ab7cfe183b53ccabebd0"
+  sha256 "25b7ec3324ac859abc7ac9667a93525109b3eccd13b0f7ee8a13d675beb8ca65"
 
   resource "mcp" do
     url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06/buttonheist-mcp-2026.04.06-macos.tar.gz"
-    sha256 "2aaaecd7be4b7ed69a1c8bf4def4341a74bb7ec5e02ca3d68227dc1592ef17fd"
+    sha256 "3ed2a483680b06d4cd17f06d191aede2832248c4b4b8e599ddb8a464f4daa9d6"
   end
 
   depends_on :macos
