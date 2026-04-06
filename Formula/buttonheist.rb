@@ -1,14 +1,14 @@
 class Buttonheist < Formula
   desc "Give AI agents full programmatic control of iOS apps"
   homepage "https://github.com/RoyalPineapple/TheButtonHeist"
-  version "2026.04.06.1"
+  version "2026.04.06.2"
 
-  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06.1/buttonheist-2026.04.06.1-macos.tar.gz"
-  sha256 "53fd9ff06ea39043c779b1617fa29362b8c9fb788ab986a689d38a8d447f7092"
+  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06.2/buttonheist-2026.04.06.2-macos.tar.gz"
+  sha256 "b9e235c68dbd6aa5e1a285880899c1a65e1aa9fba23a457186cc478ea51a3101"
 
   resource "mcp" do
-    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06.1/buttonheist-mcp-2026.04.06.1-macos.tar.gz"
-    sha256 "4845bccafaefee0e7802f03ce7a43d1cdd3692a3f810dfa2c91dc03bfb675235"
+    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v2026.04.06.2/buttonheist-mcp-2026.04.06.2-macos.tar.gz"
+    sha256 "608dcf1f5733dc4f86b4f1b04ff26a3a69b2677d972aa27f4ca9dff9b309895a"
   end
 
   depends_on :macos
@@ -16,6 +16,7 @@ class Buttonheist < Formula
 
   def install
     bin.install "buttonheist"
+    bin.install "ButtonHeistFrameworks" if (buildpath/"ButtonHeistFrameworks").exist?
     resource("mcp").stage { bin.install "buttonheist-mcp" }
   end
 
