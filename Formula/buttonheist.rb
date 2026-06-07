@@ -10,14 +10,14 @@
 class Buttonheist < Formula
   desc "Give AI agents full programmatic control of iOS apps"
   homepage "https://github.com/RoyalPineapple/TheButtonHeist"
-  version "0.5.5"
+  version "0.5.6"
 
-  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.5/buttonheist-0.5.5-macos.tar.gz"
-  sha256 "c5228d86bf4da9e1ebad832c0509c8df793619b2bcf4ccfff9c23f0f94b34ca4"
+  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.6/buttonheist-0.5.6-macos.tar.gz"
+  sha256 "4ee5a7856e94f68687c407a63bd795615eff5b8aaf023b6458bed4b125246aef"
 
   resource "mcp" do
-    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.5/buttonheist-mcp-0.5.5-macos.tar.gz"
-    sha256 "20555dba14455e88f20b0b22fe0a370d10624643a0826beed0182604c49a474c"
+    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.6/buttonheist-mcp-0.5.6-macos.tar.gz"
+    sha256 "333318df12c02b6e61ec6dbde2759d8385d17cb44604a9a2cc13ad094bdcb562"
   end
 
   depends_on :macos
@@ -25,7 +25,9 @@ class Buttonheist < Formula
 
   def install
     bin.install "buttonheist"
+    bin.install "heist-plan" if (buildpath/"heist-plan").exist?
     bin.install "ButtonHeistFrameworks" if (buildpath/"ButtonHeistFrameworks").exist?
+    lib.install "ThePlans" if (buildpath/"ThePlans").exist?
     resource("mcp").stage { bin.install "buttonheist-mcp" }
   end
 
@@ -48,5 +50,8 @@ class Buttonheist < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/buttonheist --version")
+    assert_predicate bin/"heist-plan", :exist?
+    assert_predicate lib/"ThePlans/arm64-apple-macosx/release/Modules/ThePlans.swiftmodule", :exist?
+    assert_predicate lib/"ThePlans/arm64-apple-macosx/release/description.json", :exist?
   end
 end
