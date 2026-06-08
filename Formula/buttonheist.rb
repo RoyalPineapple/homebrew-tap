@@ -10,14 +10,14 @@
 class Buttonheist < Formula
   desc "Give AI agents full programmatic control of iOS apps"
   homepage "https://github.com/RoyalPineapple/TheButtonHeist"
-  version "0.5.6"
+  version "0.5.7"
 
-  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.6/buttonheist-0.5.6-macos.tar.gz"
-  sha256 "4ee5a7856e94f68687c407a63bd795615eff5b8aaf023b6458bed4b125246aef"
+  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.7/buttonheist-0.5.7-macos.tar.gz"
+  sha256 "73dc402c19caeefc2a3f4f74a4e5ccb1441ab5629a65523cc9fc24e8dda72041"
 
   resource "mcp" do
-    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.6/buttonheist-mcp-0.5.6-macos.tar.gz"
-    sha256 "333318df12c02b6e61ec6dbde2759d8385d17cb44604a9a2cc13ad094bdcb562"
+    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.5.7/buttonheist-mcp-0.5.7-macos.tar.gz"
+    sha256 "bba1a220c3bd24195b9f10431081a08009a065a80d085a325633fd47f0c832ad"
   end
 
   depends_on :macos
@@ -51,7 +51,8 @@ class Buttonheist < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/buttonheist --version")
     assert_predicate bin/"heist-plan", :exist?
-    assert_predicate lib/"ThePlans/arm64-apple-macosx/release/Modules/ThePlans.swiftmodule", :exist?
+    assert_predicate lib/"ThePlans/arm64-apple-macosx/release/Modules/ThePlans.swiftinterface", :exist?
+    refute_predicate lib/"ThePlans/arm64-apple-macosx/release/Modules/ThePlans.swiftmodule", :exist?
     assert_predicate lib/"ThePlans/arm64-apple-macosx/release/description.json", :exist?
   end
 end
