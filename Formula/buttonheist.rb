@@ -10,14 +10,14 @@
 class Buttonheist < Formula
   desc "Give AI agents full programmatic control of iOS apps"
   homepage "https://github.com/RoyalPineapple/TheButtonHeist"
-  version "0.6.27"
+  version "0.6.28"
 
-  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.6.27/buttonheist-0.6.27-macos.tar.gz"
-  sha256 "85660a4dc83ebca6f2ebae6f68ca4135a49b683e0ce1f62afd13c59d16b21534"
+  url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.6.28/buttonheist-0.6.28-macos.tar.gz"
+  sha256 "0d9e09e1d3aa14c506f2c81743f9cb298efe0f0cb8de773a588c761466193391"
 
   resource "mcp" do
-    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.6.27/buttonheist-mcp-0.6.27-macos.tar.gz"
-    sha256 "579a4f5e10b29aa0130547889d9ef34ab6431ae383d00ddd7f58b357625952a7"
+    url "https://github.com/RoyalPineapple/TheButtonHeist/releases/download/v0.6.28/buttonheist-mcp-0.6.28-macos.tar.gz"
+    sha256 "7c6e91a4b1110f1ed3ee77a9dc4f02afae41211cf35a41850758ab36899084e3"
   end
 
   depends_on :macos
